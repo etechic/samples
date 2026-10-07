@@ -1,8 +1,16 @@
 setcpm(10);
 
 samples('github:tidalcycles/dirt-samples')
+samples('github:algorave-dave/samples')
 
 const beat = "<03 02>".fast("[1|2|3]")
+
+CHOP: s("<whatUneed:2>").note(36.1)
+  .scrub("<0.83 0.19 0.33 0.1>").ply("<8 4 4 8>")
+  .fast(2)
+  .clip(1).postgain(2).lpf(slider(7043.2,400,10000))
+  .delay(0.1).o(2).room(1).rfade(30)
+  ._punchcard()
 
 BASSLINE: note("a2@2 e2 g#2")
   .slow(4)
@@ -67,7 +75,7 @@ ARP: arrange(
     .unison(10)
     .o(2)
     .room(1)
-    .lpf(slider(10000, 100, 10000, 1))
+    .lpf(slider(1675, 100, 10000, 1))
     .decay(0.2)
     .postgain(0.5)
    ]
